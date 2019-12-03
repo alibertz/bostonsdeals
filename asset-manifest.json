@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/bostonsdeals/static/css/main.a2f1fda4.chunk.css",
-    "main.js": "/bostonsdeals/static/js/main.0b4564f2.chunk.js",
-    "main.js.map": "/bostonsdeals/static/js/main.0b4564f2.chunk.js.map",
+    "main.css": "/bostonsdeals/static/css/main.cac0a7b8.chunk.css",
+    "main.js": "/bostonsdeals/static/js/main.72cd61be.chunk.js",
+    "main.js.map": "/bostonsdeals/static/js/main.72cd61be.chunk.js.map",
     "runtime-main.js": "/bostonsdeals/static/js/runtime-main.c3e07659.js",
     "runtime-main.js.map": "/bostonsdeals/static/js/runtime-main.c3e07659.js.map",
     "static/css/2.0624914a.chunk.css": "/bostonsdeals/static/css/2.0624914a.chunk.css",
-    "static/js/2.6549caa1.chunk.js": "/bostonsdeals/static/js/2.6549caa1.chunk.js",
-    "static/js/2.6549caa1.chunk.js.map": "/bostonsdeals/static/js/2.6549caa1.chunk.js.map",
+    "static/js/2.a709952e.chunk.js": "/bostonsdeals/static/js/2.a709952e.chunk.js",
+    "static/js/2.a709952e.chunk.js.map": "/bostonsdeals/static/js/2.a709952e.chunk.js.map",
     "index.html": "/bostonsdeals/index.html",
-    "precache-manifest.d783987efecbb55faf4d6298d42418e8.js": "/bostonsdeals/precache-manifest.d783987efecbb55faf4d6298d42418e8.js",
+    "precache-manifest.e8d011a134a0362d8bba472663c839d6.js": "/bostonsdeals/precache-manifest.e8d011a134a0362d8bba472663c839d6.js",
     "service-worker.js": "/bostonsdeals/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/bostonsdeals/static/css/2.0624914a.chunk.css.map",
-    "static/css/main.a2f1fda4.chunk.css.map": "/bostonsdeals/static/css/main.a2f1fda4.chunk.css.map"
+    "static/css/main.cac0a7b8.chunk.css.map": "/bostonsdeals/static/css/main.cac0a7b8.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.c3e07659.js",
     "static/css/2.0624914a.chunk.css",
-    "static/js/2.6549caa1.chunk.js",
-    "static/css/main.a2f1fda4.chunk.css",
-    "static/js/main.0b4564f2.chunk.js"
+    "static/js/2.a709952e.chunk.js",
+    "static/css/main.cac0a7b8.chunk.css",
+    "static/js/main.72cd61be.chunk.js"
   ]
 }
