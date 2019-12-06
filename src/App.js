@@ -26,9 +26,16 @@ class App extends Component {
   handleChange = (e) => {
     if(e.key === 'Enter') {
 
-      this.setState({value: this.state.suggestions[0], location: this.state.suggestions[0]});
-      this.setState({suggestions: []});
+      let value = this.state.suggestions[0];
 
+      if (value === undefined) {
+        value = e.target.value;
+      }
+      
+      this.setState({value: this.state.suggestions[0], location: value});
+      this.setState({suggestions: []}, console.log(value));
+
+      
       // Old handler for enter key, revert if new way breaks
       // this.setState({[e.target.name]: e.target.value });
       
@@ -43,7 +50,7 @@ class App extends Component {
     this.setState({location});
   }
 
-  onTextChanged (suggestions, value) {
+  onTextChanged (suggestions, value, location) {
     this.setState({suggestions, value});
   }
 

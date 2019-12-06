@@ -56,6 +56,8 @@ export default class AutoCompleteText extends React.Component {
 
     renderSuggestions () {
         const { suggestions } = this.props;
+        const location = this.state.text;
+
         if (suggestions.length === 0) {
             return null;
         }
@@ -78,7 +80,7 @@ export default class AutoCompleteText extends React.Component {
     }
 
     render () {
-        const { value } = this.props;
+        const value = this.props.value;
         return (
             <div id="locationSelector" >
                 <input  type="text" 
