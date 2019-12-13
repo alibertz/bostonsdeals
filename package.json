@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/alibertz/bostonsdeals/issues"
   },
-  "homepage": "https://bostons-deals.herokuapp.com",
+  "homepage": "https://bostonsdeals.herokuapp.com",
   "dependencies": {
     "react-scripts": "^3.3.0"
   }
