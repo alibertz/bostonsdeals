@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "App that shows you deals in your neighborhood happening right now",
   "main": "index.js",
+  "homepage": "https://bostonsdeals.herokuapp.com",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js"
