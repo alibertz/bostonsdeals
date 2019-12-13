@@ -1,0 +1,23 @@
+{
+  "name": "bostonsdeals",
+  "version": "1.0.0",
+  "description": "Application to easily help users find deals to restaurants in their area according to the day of the week",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alibertz/bostonsdeals.git"
+  },
+  "author": "Kevin Aliberti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alibertz/bostonsdeals/issues"
+  },
+  "homepage": "https://github.com/alibertz/bostonsdeals#readme",
+  "dependencies": {
+    "react-scripts": "^3.3.0"
+  }
+}
