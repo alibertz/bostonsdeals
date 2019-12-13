@@ -5,7 +5,6 @@
     "node": "10.16.0"
   },
   "homepage": "https://bostonsdeals.herokuapp.com",
-  "private": true,
   "dependencies": {
     "apollo-boost": "^0.4.4",
     "apollo-client": "^2.6.4",
@@ -24,8 +23,8 @@
   "scripts": {
     "start": "npm-run-all --parallel watch:server start:web",
     "start:web": "react-scripts start",
-    "start:server": "node ../index.js",
-    "watch:server": "nodemon --watch ../index.js ../index.js",
+    "start:server": "node ../server/src",
+    "watch:server": "nodemon --watch ../server/src ../server/src",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

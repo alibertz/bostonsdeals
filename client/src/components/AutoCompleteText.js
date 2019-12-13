@@ -62,7 +62,7 @@ export default class AutoCompleteText extends React.Component {
         }
         return (
             <ul>
-                {suggestions.map((item) => <li onClick={() => this.handleLocationSelect(item)}><i className="fas fa-search"></i>{item}</li>)}
+                {suggestions.map((item) => <li onClick={() => this.handleLocationSelect(item)} key={this.props.posts.id}><i className="fas fa-search"></i>{item}</li>)}
             </ul>
         );
     }

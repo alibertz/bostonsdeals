@@ -73,6 +73,7 @@ class App extends Component {
               suggestions={this.state.suggestions}
               onTextChanged={this.onTextChanged.bind(this)}
               value={this.state.value}
+              posts={this.state.posts}
               />
 
           <PostViewer 

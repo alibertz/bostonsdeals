@@ -65,6 +65,7 @@ class FilterDeals extends Component {
                     suggestions={this.props.suggestions}
                     onTextChanged={this.props.onTextChanged}
                     value={this.props.value}
+                    posts={this.props.posts}
                     />
         
                 <div id="dayOfWeekSelector" className="dropdown show">
