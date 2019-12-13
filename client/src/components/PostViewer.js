@@ -24,7 +24,8 @@ export default (props) => (
               return (
                 <Spring
                 from={{opacity: 0, marginTop: -15}}
-                to={{opacity:1, marginTop: 0}}>
+                to={{opacity:1, marginTop: 0}}
+                key={post.id}>
                   {props => (
                     <div id="card" style={props} key={post.id}>
                       <div className="info">
