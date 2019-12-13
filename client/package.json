@@ -18,7 +18,8 @@
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
     "react-spring": "^8.0.27",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "start": "npm-run-all --parallel watch:server start:web",
@@ -29,6 +30,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "scss": "node-sass --watch assets/scss -o assets/css"
+    
   },
   "browserslist": {
     "production": [
@@ -43,8 +45,8 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
-    "npm-run-all": "^4.1.5"
+    "nodemon": "^2.0.2"
+    
     
   }
 }
