@@ -19,6 +19,7 @@
   },
   "homepage": "https://bostonsdeals.herokuapp.com",
   "dependencies": {
+    "node-sass": "^4.13.0",
     "react-scripts": "^3.3.0"
   }
 }
