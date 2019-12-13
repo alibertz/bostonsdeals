@@ -24,8 +24,8 @@
   "scripts": {
     "start": "npm-run-all --parallel watch:server start:web",
     "start:web": "react-scripts start",
-    "start:server": "node ../server/src",
-    "watch:server": "nodemon --watch ../server/src ../server/src",
+    "start:server": "node ../index.js",
+    "watch:server": "nodemon --watch ../index.js ../index.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
