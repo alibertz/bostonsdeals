@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "react-scripts build",
     "heroku-postbuild": "cd client/ && npm install && npm run build",
-    "start":"serve -s build -l 4000",
+    "start":"node server/src/index.js && serve -s build -l 4000",
     "dev":"react-scripts start"
   },
-  "":{
+  "engines":{
     "npm":"6.13.2",
     "node":"10.16.0"
   },
