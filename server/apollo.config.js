@@ -1,6 +1,6 @@
 module.exports = {
   service: {
-    url: "http://localhost:4000",
-    endpoint: "http://localhost:4000"
+    url: "http://0.0.0.0:4000",
+    endpoint: "http://0.0.0.0:4000"
   }
 };
