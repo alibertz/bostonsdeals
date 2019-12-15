@@ -87,7 +87,14 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
 app.use(cors());
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: "/graphql" });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(__dirname + "/client/build"));
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
+}
 
 const PORT = process.env.PORT || 4000;
 
