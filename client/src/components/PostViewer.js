@@ -17,7 +17,7 @@ export const GET_POSTS = gql`
 export default (props) => (
   <Query query={GET_POSTS} variables={{ location: props.location, dayOfWeek: props.dayOfWeek}}>
     {({ loading, data }) => !loading && (
-        <>
+        <div>
           {data.posts.length > 0 ? (<h4 id="tagline">{props.location.length > 0 ? data.posts.length + ' d' : 'D'}eal{data.posts.length > 1 && 's'} {props.location.length > 0 && 'in '}<span className="location">{props.location}</span> for {props.dayOfWeek}</h4>) : (<h4 id="tagline">No results for '{props.location}'. Try again?</h4>)}
           <div id="card-wrapper">
             {data.posts.map(post => {
@@ -46,7 +46,7 @@ export default (props) => (
             })}
             
           </div>
-        </>
+        </div>
         
         
     )}

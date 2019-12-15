@@ -87,7 +87,7 @@ export default class AutoCompleteText extends React.Component {
                         onKeyPress={this.props.handleChange} 
                         type="text"
                         onChange={this.onTextChanged}
-                        value={value}
+                        value={value || ''}
                         />
 
                 {this.renderSuggestions()}

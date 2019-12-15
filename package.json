@@ -7,7 +7,8 @@
     "build": "react-scripts build",
     "heroku-postbuild": "cd client/ && npm install && npm run build",
     "start": "serve -s build",
-    "dev": "react-scripts start"
+    "dev": "react-scripts start",
+    "server": "node index.js"
   },
   "engines": {
     "npm": "6.13.2",

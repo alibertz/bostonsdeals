@@ -87,14 +87,14 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
 app.use(cors());
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: "/graphql" });
 
-app.use(express.static('public'));
+app.use(express.static('/client/public'));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/public', 'index.html'));
 });
 
 const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => console.log(`u already kno that server BEEN started on localhost:${PORT}/graphql`));
+app.listen(PORT, "0.0.0.0", () => console.log(`u already kno that server BEEN started on localhost:${PORT}/graphql`));
