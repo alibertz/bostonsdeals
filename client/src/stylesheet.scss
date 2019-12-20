@@ -59,7 +59,7 @@ body {
             position: absolute;
             background-color: #ffffff;
             transition: all 3s ease-out;
-            width: 60%;
+            width: 70%;
             z-index: 10;
             overflow-x: hidden;
             left: 0;
@@ -68,7 +68,7 @@ body {
                 border: none;
                 background-color: inherit !important;
                 color: rgb(75, 75, 75);
-                font-size: 1.6rem;
+                font-size: 1.3rem;
                 text-align: center;
                 position: relative;
                 width: 100%;
@@ -93,20 +93,54 @@ body {
             }
         }
     
-        #dayOfWeekSelector {
-            margin: 30% auto 0 auto;
-            transition: margin 1.7s ease-out;
-            transition: transform .5s ease-out;
+        // #dayOfWeekSelector {
+        //     margin: 30% auto 0 auto;
+        //     transition: margin 1.7s ease-out;
+        //     transition: transform .5s ease-out;
             
-            a {
-                font-size: 1.6rem;
-                border-radius: 2rem;
-                background-color: #f0dd9beb;
-                border: none;
-                color: #270703;
-                padding: 1rem 2.5rem 1rem 2.5rem;
-            }
+        //     a {
+        //         font-size: 1.6rem;
+        //         border-radius: 2rem;
+        //         background-color: #f0dd9beb;
+        //         border: none;
+        //         color: #270703;
+        //         padding: 1rem 2.5rem 1rem 2.5rem;
+        //     }
                 
+        // }
+        #dayOfWeekSelector {
+            margin: 8rem auto 2rem auto;
+            
+            label {
+                display: inline; 
+                padding: 2rem; 
+                position: relative; 
+                padding-left: 20px;   
+                input {
+                    display: none;                    
+                }
+                span {
+                    font-family: helvetica;
+                    width: 15px; height: 15px; 
+                    position: absolute; 
+                    overflow: hidden; 
+                    line-height: 3; 
+                    text-align: center; 
+                    border-radius: 100%; 
+                    font-size: 10pt; 
+                    left:0;
+                    top: 50%; 
+                    margin: -7.5px auto 0 .4rem;
+                    height: 2.5rem;
+                    width: 2.5rem;
+                    background-color: #cee1eb9d;
+                    color: white;
+                    font-weight: bold;                    
+                } 
+                input:checked + span {
+                    background: goldenrod;                    
+                }            
+            }
         }
     }
     
@@ -215,7 +249,7 @@ body {
     
 }
 
-$tablet-breakpoint: 550px;
+$tablet-breakpoint: 720px;
 $desktop-breakpoint: 900px;
 
 @media (min-width:$tablet-breakpoint){
@@ -313,8 +347,18 @@ $desktop-breakpoint: 900px;
             }
         
             #dayOfWeekSelector {
-                margin: 1.6rem auto 0 4rem;
-                display:inline-block;
+                margin: 2rem;
+                position: relative;
+                right: -12rem;
+                label {
+                    margin: .8%;
+                    span {
+                        height: 3rem;
+                        width: 3rem;
+                        line-height: 3.6;
+                        
+                    }
+                }
                 a {
                     font-size: 1rem;
                     border-radius: 2rem;

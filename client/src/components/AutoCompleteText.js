@@ -88,6 +88,7 @@ export default class AutoCompleteText extends React.Component {
                         type="text"
                         onChange={this.onTextChanged}
                         value={value || ''}
+                        placeholder="Enter neighborhood..."
                         />
 
                 {this.renderSuggestions()}

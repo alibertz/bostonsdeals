@@ -68,11 +68,11 @@ class FilterDeals extends Component {
                     posts={this.props.posts}
                     />
         
-                <div id="dayOfWeekSelector" className="dropdown show">
+                {/*<div id="dayOfWeekSelector" className="dropdown show">
                     <a className="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onKeyPress={this.props.setPosts}>
                         {this.props.dayOfWeek}
                     </a>
-                    <div name="dayOfWeek" className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                     <div name="dayOfWeek" className="dropdown-menu" aria-labelledby="dropdownMenuLink">
                         <option className="dropdown-item" onClick={this.props.handleDayChange}  name="dayOfWeek" value="Sunday">Sunday</option>
                         <option className="dropdown-item" onClick={this.props.handleDayChange}  name="dayOfWeek" value="Monday">Monday</option>
                         <option className="dropdown-item" onClick={this.props.handleDayChange}  name="dayOfWeek" value="Tuesday">Tuesday</option>
@@ -80,9 +80,40 @@ class FilterDeals extends Component {
                         <option className="dropdown-item" onClick={this.props.handleDayChange}  name="dayOfWeek" value="Thursday">Thursday</option>
                         <option className="dropdown-item" onClick={this.props.handleDayChange}  name="dayOfWeek" value="Friday">Friday</option>
                         <option className="dropdown-item" onClick={this.props.handleDayChange}  name="dayOfWeek" value="Saturday">Saturday</option>
+                    </div> */}
+                    
+                    <div id="dayOfWeekSelector">
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Sunday"/>
+                        <span>Sun</span>
+                      </label>
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Monday"/>
+                        <span>Mon</span>
+                      </label>
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Tuesday"/>
+                        <span>Tues</span>
+                      </label>
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Wednesday"/>
+                        <span>Wed</span>
+                      </label>
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Thursday"/>
+                        <span>Thu</span>
+                      </label>
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Friday"/>
+                        <span>Fri</span>
+                      </label>
+                      <label>
+                        <input onClick={this.props.handleDayChange} type="radio" name="dayOfWeek" value="Saturday"/>
+                        <span>Sat</span>
+                      </label>  
                     </div>
                 </div>
-        </div>
+        // </div>
         )
     }
 }
