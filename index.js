@@ -13,7 +13,6 @@ const typeDefs = gql`
   type Query {
     posts(location: String dayOfWeek: String): [Post]
     post(id: ID): Post
-    postys: [Post]
   }
 
   type Post {
@@ -24,36 +23,38 @@ const typeDefs = gql`
     description: String
     dayOfWeek: String
     expiryDate: String
+    lat: Float
+    lng: Float
   }
 `;
 
 // Data set
 const POSTS = [
-    { id: "1", companyName: "Stella", address: "123 Main St", location: "Back Bay", description: "$2 drafts", dayOfWeek: "Sunday", expiryDate: "N\/A" },
-    { id: "2", "companyName": "Border Cafe", "address": "124 Main St", "location": "Cambridge", "description": "$4 sandwiches", "dayOfWeek": "Monday", "expiryDate": "N\/A" },
-    { id: "3", "companyName": "McDonalds", "address": "125 Main St", "location": "Copley Square", "description": "BOGO drafts", "dayOfWeek": "Friday", "expiryDate": "N\/A" },
-    { id: "4", "companyName": "The Model", "address": "126 Main St", "location": "Harvard Square", "description": "Half priced appetizers", "dayOfWeek": "Wednesday", "expiryDate": "N\/A" },
-    { id: "5", "companyName": "Shifts", "address": "127 Main St", "location": "South End", "description": "$1 drafts", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { id: "6", "companyName": "Tavern in the Square", "address": "128 Main St", "location": "Somerville", "description": "$2 burgers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { id: "7", "companyName": "McDonalds", "address": "129 Main St", "location": "North End", "description": "$2 drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A" },
-    { id: "8", "companyName": "Trader Joe's", "address": "130 Main St", "location": "North End", "description": "$4 sandwiches", "dayOfWeek": "Daily", "expiryDate": "N\/A" },
-    { id: "9", "companyName": "Tasty Burger", "address": "131 Main St", "location": "Financial District", "description": "BOGO drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A" },
-    { id: "10", "companyName": "Tasty Burger", "address": "132 Main St", "location": "Cambridge", "description": "Half priced appetizers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { "id": "11", "companyName": "Sweetgreen's", "address": "133 Main St", "location": "Harvard Square", "description": "$1 drafts", "dayOfWeek": "Sunday", "expiryDate": "N\/A" },
-    { "id": "12", "companyName": "An Tain", "address": "134 Main St", "location": "Davis Square", "description": "$2 burgers", "dayOfWeek": "Monday", "expiryDate": "N\/A" },
-    { "id": "13", "companyName": "Red House Tavern", "address": "135 Main St", "location": "South End", "description": "$2 drafts", "dayOfWeek": "Friday", "expiryDate": "N\/A" },
-    { "id": "14", "companyName": "Dark Horse Tavern", "address": "136 Main St", "location": "Financial District", "description": "$4 sandwiches", "dayOfWeek": "Wednesday", "expiryDate": "N\/A" },
-    { "id": "15", "companyName": "Tasty Burger", "address": "137 Main St", "location": "Back Bay", "description": "BOGO drafts", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { "id": "16", "companyName": "Felipe's", "address": "138 Main St", "location": "Back Bay", "description": "Half priced appetizers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { "id": "17", "companyName": "Chimmichurri Steakhouse", "address": "139 Main St", "location": "Somerville", "description": "$1 drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A" },
-    { "id": "18", "companyName": "Coogan's", "address": "140 Main St", "location": "Harvard Square", "description": "$2 burgers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { "id": "19", "companyName": "Coogan's", "address": "141 Main St", "location": "South End", "description": "$2 drafts", "dayOfWeek": "Thursday", "expiryDate": "N\/A" },
-    { "id": "20", "companyName": "Big Brain Steakhouse", "address": "142 Main St", "location": "Copley Square", "description": "$4 sandwiches", "dayOfWeek": "Tuesday", "expiryDate": "N\/A" },
-    { "id": "21", "companyName": "Pokework's", "address": "143 Main St", "location": "Cambridge", "description": "BOGO drafts", "dayOfWeek": "Sunday", "expiryDate": "N\/A" },
-    { "id": "22", "companyName": "Border Cafe", "address": "144 Main St", "location": "North End", "description": "Half priced appetizers", "dayOfWeek": "Monday", "expiryDate": "N\/A" },
-    { "id": "23", "companyName": "Ben n Jerry's", "address": "145 Main St", "location": "Brighton", "description": "$1 drafts", "dayOfWeek": "Friday", "expiryDate": "N\/A" },
-    { "id": "24", "companyName": "The 99", "address": "146 Main St", "location": "Brighton", "description": "$2 burgers", "dayOfWeek": "Wednesday", "expiryDate": "N\/A" },
-    { "id": "25", "companyName": "Amici's", "address": "147 Main St", "location": "Brighton", "description": "$2 drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A" }
+    { id: "1", companyName: "Stella", address: "123 Main St", location: "Back Bay", description: "$2 drafts", dayOfWeek: "Sunday", expiryDate: "N\/A", lat: 47, lng: -77},
+    { id: "2", "companyName": "Border Cafe", "address": "124 Main St", "location": "Cambridge", "description": "$4 sandwiches", "dayOfWeek": "Monday", "expiryDate": "N\/A", lat: 47, lng: -71.073315 },
+    { id: "3", "companyName": "McDonalds", "address": "125 Main St", "location": "Copley Square", "description": "BOGO drafts", "dayOfWeek": "Friday", "expiryDate": "N\/A", lat: 77, lng: -71.073315 },
+    { id: "4", "companyName": "The Model", "address": "126 Main St", "location": "Harvard Square", "description": "Half priced appetizers", "dayOfWeek": "Wednesday", "expiryDate": "N\/A", lat: 77, lng: -71.073315 },
+    { id: "5", "companyName": "Shifts", "address": "127 Main St", "location": "South End", "description": "$1 drafts", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 77, lng: -71.073315 },
+    { id: "6", "companyName": "Tavern in the Square", "address": "128 Main St", "location": "Somerville", "description": "$2 burgers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 77, lng: -71.073315 },
+    { id: "7", "companyName": "McDonalds", "address": "129 Main St", "location": "North End", "description": "$2 drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A", lat: 42.348311, lng: -71.073315 },
+    { id: "8", "companyName": "Trader Joe's", "address": "130 Main St", "location": "North End", "description": "$4 sandwiches", "dayOfWeek": "Daily", "expiryDate": "N\/A", lat: 42.333411, lng: -71.073315 },
+    { id: "9", "companyName": "Tasty Burger", "address": "131 Main St", "location": "Financial District", "description": "BOGO drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "10", "companyName": "Tasty Burger", "address": "132 Main St", "location": "Cambridge", "description": "Half priced appetizers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 42.348422, lng: -71.073315 },
+    { id: "11", "companyName": "Sweetgreen's", "address": "133 Main St", "location": "Harvard Square", "description": "$1 drafts", "dayOfWeek": "Sunday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "12", "companyName": "An Tain", "address": "134 Main St", "location": "Davis Square", "description": "$2 burgers", "dayOfWeek": "Monday", "expiryDate": "N\/A", lat: 42.3411, lng: -71.073315 },
+    { id: "13", "companyName": "Red House Tavern", "address": "135 Main St", "location": "South End", "description": "$2 drafts", "dayOfWeek": "Friday", "expiryDate": "N\/A", lat: 42.344031, lng: -71.073315 },
+    { id: "14", "companyName": "Dark Horse Tavern", "address": "136 Main St", "location": "Financial District", "description": "$4 sandwiches", "dayOfWeek": "Wednesday", "expiryDate": "N\/A", lat: 42.648411, lng: -71.073315 },
+    { id: "15", "companyName": "Tasty Burger", "address": "137 Main St", "location": "Back Bay", "description": "BOGO drafts", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 42.648411, lng: -71.073315 },
+    { id: "16", "companyName": "Felipe's", "address": "138 Main St", "location": "Back Bay", "description": "Half priced appetizers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "17", "companyName": "Chimmichurri Steakhouse", "address": "139 Main St", "location": "Somerville", "description": "$1 drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "18", "companyName": "Coogan's", "address": "140 Main St", "location": "Harvard Square", "description": "$2 burgers", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "19", "companyName": "Coogan's", "address": "141 Main St", "location": "South End", "description": "$2 drafts", "dayOfWeek": "Thursday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "20", "companyName": "Big Brain Steakhouse", "address": "142 Main St", "location": "Copley Square", "description": "$4 sandwiches", "dayOfWeek": "Tuesday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "21", "companyName": "Pokework's", "address": "143 Main St", "location": "Cambridge", "description": "BOGO drafts", "dayOfWeek": "Sunday", "expiryDate": "N\/A", lat: 42.348411, lng: -77 },
+    { id: "22", "companyName": "Border Cafe", "address": "144 Main St", "location": "North End", "description": "Half priced appetizers", "dayOfWeek": "Monday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "23", "companyName": "Ben n Jerry's", "address": "145 Main St", "location": "Brighton", "description": "$1 drafts", "dayOfWeek": "Friday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "24", "companyName": "The 99", "address": "146 Main St", "location": "Brighton", "description": "$2 burgers", "dayOfWeek": "Wednesday", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 },
+    { id: "25", "companyName": "Amici's", "address": "147 Main St", "location": "Brighton", "description": "$2 drafts", "dayOfWeek": "Daily", "expiryDate": "N\/A", lat: 42.348411, lng: -71.073315 }
 ];
 
 // Getting the current day
@@ -66,13 +67,11 @@ let currentDay = weekdays[d.getDay()];
 const resolvers = {
   Query: {
     posts: (parent, {location, dayOfWeek}) => {
-      // return POSTS.filter(post => post.location.toUpperCase().includes(location.toUpperCase()) && ((post.dayOfWeek === currentDay) || ( post.dayOfWeek === dayOfWeek ) || (post.dayOfWeek === "Daily")));
       return POSTS.filter(post => post.location.toUpperCase().includes(location.toUpperCase()) && ((post.dayOfWeek === currentDay) || ( post.dayOfWeek === dayOfWeek ) || (post.dayOfWeek === "Daily")));
     },
     post: (parent, { id }) => {
       return POSTS.find(post => post.id === id);
     },
-    postys: () => POSTS
   },
 };
 
@@ -80,10 +79,6 @@ const resolvers = {
 // definition and your set of resolvers.
 const server = new ApolloServer({ typeDefs, resolvers });
 
-// The `listen` method launches a web server.
-// server.listen().then(({ url }) => {
-//   console.log(`🚀  Server ready at ${url}`);
-// });
 
 const app = express();
 app.use(cors());
