@@ -9,12 +9,14 @@ import Map from './Map';
 const GET_POSTS = gql`
 	query GET_POSTS($location: String, $dayOfWeek: String){
 		posts(location: $location dayOfWeek: $dayOfWeek) {
-		id
-		location
-		description
-		companyName
-		lat
-		lng
+			id
+			companyName
+			address
+			location
+			description
+			dayOfWeek
+			lat
+			lng
 		}
 	}
 `;
@@ -55,7 +57,7 @@ class PostViewer extends React.Component {
 														<h2 className="description">{post.description}</h2>
 														<h3 className="companyName">{post.companyName}</h3>
 														<h4 className="location"><i className="fas fa-map-marker-alt" style={{paddingRight: '.5rem'}}></i>{post.location}</h4>
-														<h4 className="address">{post.address}</h4>
+														
 													</div>
 													<div className="directions">
 														<i className="fas fa-directions"></i>
@@ -70,6 +72,7 @@ class PostViewer extends React.Component {
 														mapElement={<div className='googleMap' style={{ height: `100%` }} />}
 														lat={post.lat}
 														lng={post.lng}
+														address={post.address}
 													/> : 
 													<div className="more">
 														<i className="fas fa-angle-double-down"></i><em><h6>more</h6></em>
