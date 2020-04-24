@@ -65,15 +65,18 @@ class PostViewer extends React.Component {
 												</div>
 												
 												{this.state[post.id] ?
-													<Map
-														googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeR4JJANXM7oOYOzhXYlrcQeJ5y0FKRw4&v=3.exp&libraries=geometry,drawing,places"
-														loadingElement={<div className='googleMap' style={{ height: `100%` }} />}
-														containerElement={<div className='googleMap' />}
-														mapElement={<div className='googleMap' style={{ height: `100%` }} />}
-														lat={post.lat}
-														lng={post.lng}
-														address={post.address}
-													/> : 
+													<div>
+														<h4 className="address">{post.address}</h4>
+														<Map
+															googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeR4JJANXM7oOYOzhXYlrcQeJ5y0FKRw4&v=3.exp&libraries=geometry,drawing,places"
+															loadingElement={<div className='googleMap' style={{ height: `100%` }} />}
+															containerElement={<div className='googleMap' />}
+															mapElement={<div className='googleMap' style={{ height: `100%` }} />}
+															lat={post.lat}
+															lng={post.lng}
+														/>													
+													</div>
+ : 
 													<div className="more">
 														<i className="fas fa-angle-double-down"></i><em><h6>more</h6></em>
 													</div>

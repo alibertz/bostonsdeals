@@ -34,7 +34,7 @@ const typeDefs = gql`
 const POSTS = [
     { id: "1", companyName: "Stella", address: "123 Main St", location: "Back Bay", description: "$2 drafts", dayOfWeek: "Sunday", lat: 47, lng: -77},
     { id: "2", "companyName": "Border Cafe", "address": "124 Main St", "location": "Cambridge", "description": "$4 sandwiches", "dayOfWeek": "Monday",  lat: 47, lng: -71.073315 },
-    { id: "3", "companyName": "McDonalds", "address": "125 Main St", "location": "Copley Square", "description": "BOGO drafts", "dayOfWeek": "Friday",  lat: 77, lng: -71.073315 },
+    { id: "3", "companyName": "McDonalds", "address": "125 Main St", "location": "Copley Square", "description": "BOGO drafts", "dayOfWeek": "Friday",  lat: 42.344231, lng: -71.073315 },
     { id: "4", "companyName": "The Model", "address": "126 Main St", "location": "Harvard Square", "description": "Half priced appetizers", "dayOfWeek": "Wednesday",  lat: 77, lng: -71.073315 },
     { id: "5", "companyName": "Shifts", "address": "127 Main St", "location": "South End", "description": "$1 drafts", "dayOfWeek": "Tuesday",  lat: 77, lng: -71.073315 },
     { id: "6", "companyName": "Tavern in the Square", "address": "128 Main St", "location": "Somerville", "description": "$2 burgers", "dayOfWeek": "Tuesday",  lat: 77, lng: -71.073315 },

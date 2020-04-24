@@ -162,9 +162,6 @@ body {
         padding-bottom: 2rem;
         text-align: center;
         margin: auto auto;
-        .expandedCard {
-            height: 500px !important;
-        }
         .card {
             position: relative;
             z-index: 5;
@@ -219,7 +216,12 @@ body {
                     padding-left: .7rem;
                 }
             }
-            
+            .address {
+                color: gray;
+                font-family: 'Comfortaa', cursive;
+                font-size: 1.25rem;
+                margin-top: 1.75rem;
+            }
             .googleMap {
                 position: relative;
                 // background-color: rgb(199, 199, 199);
