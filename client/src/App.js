@@ -73,6 +73,7 @@ class App extends Component {
               suggestions={this.state.suggestions}
               onTextChanged={this.onTextChanged.bind(this)}
               value={this.state.value}
+              // eslint-disable-next-line
               posts={this.state.posts}
               />
 

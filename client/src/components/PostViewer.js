@@ -29,8 +29,16 @@ class PostViewer extends React.Component {
 	render() {
 		const expandCard = (e) => {
 			// only expand card if click is NOT within Google map
-			if(e.target.parentNode.parentNode.parentNode.parentNode.className !== 'googleMap') {
+			if(e.target.parentNode.parentNode.parentNode.parentNode.className !== 'googleMap' && e.target.parentNode.className !== 'directions') {
 				this.setState({[e.currentTarget.id]: !this.state[e.currentTarget.id]});
+			}
+		}
+
+		const openMaps = (arr) => {
+			if((navigator.platform.indexOf("iPhone") !== -1) || (navigator.platform.indexOf("iPad") !== -1) || (navigator.platform.indexOf("iPod") !== -1)) {
+				window.open("maps://maps.google.com/maps?daddr=42.360249,-71.134562&amp;ll=");					 
+			} else {
+				window.open("https://maps.google.com/maps?daddr="+arr[0]+","+arr[1]+"&amp;ll=");
 			}
 		}
 
@@ -59,7 +67,7 @@ class PostViewer extends React.Component {
 														<h4 className="location"><i className="fas fa-map-marker-alt" style={{paddingRight: '.5rem'}}></i>{post.location}</h4>
 														
 													</div>
-													<div className="directions">
+													<div className="directions" onClick={openMaps.bind(this, [post.lat, post.lng])}>
 														<i className="fas fa-directions"></i>
 													</div>
 												</div>

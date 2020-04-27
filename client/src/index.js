@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// PRODUCTION: /graphql
+// DEVELOPMENT: http://localhost:4000/graphql
+
 const client = new ApolloClient({
     uri: "/graphql"
 });

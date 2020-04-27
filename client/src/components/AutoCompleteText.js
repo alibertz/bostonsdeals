@@ -85,6 +85,7 @@ export default class AutoCompleteText extends React.Component {
                 <input  type="text" 
                         name="location"
                         onKeyPress={this.props.handleChange} 
+                        // eslint-disable-next-line
                         type="text"
                         onChange={this.onTextChanged}
                         value={value || ''}
