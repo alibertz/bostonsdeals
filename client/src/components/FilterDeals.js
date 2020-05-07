@@ -37,8 +37,6 @@ class FilterDeals extends Component {
 				this.setState({
 					value: value
 				});
-				// console.log(this.state.value);
-				// console.log(this.state.predictions);
 
 				if (value.length > 0) {
 					// make delayed api call
@@ -66,6 +64,7 @@ class FilterDeals extends Component {
 										onTextChanged={this.props.onTextChanged}
 										value={this.props.value}
 										posts={this.props.posts}
+										items={this.props.items}
 										/>
 										
 										<div id="dayOfWeekSelector">

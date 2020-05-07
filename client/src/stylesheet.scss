@@ -45,6 +45,7 @@ body {
         text-align: center;
         z-index: 10;
         position: relative;
+        cursor: pointer;
     }    
     
     #filterDeals {
@@ -54,12 +55,12 @@ body {
         
         #locationSelector {
             border: none;
-            border-radius: 1rem;
+            border-radius: .5rem;
             margin: 10% auto 0 auto;
             position: absolute;
             background-color: #ffffff;
             transition: all 3s ease-out;
-            width: 70%;
+            max-width: 70%;
             z-index: 10;
             overflow-x: hidden;
             left: 0;
@@ -92,22 +93,7 @@ body {
                 }
             }
         }
-    
-        // #dayOfWeekSelector {
-        //     margin: 30% auto 0 auto;
-        //     transition: margin 1.7s ease-out;
-        //     transition: transform .5s ease-out;
-            
-        //     a {
-        //         font-size: 1.6rem;
-        //         border-radius: 2rem;
-        //         background-color: #f0dd9beb;
-        //         border: none;
-        //         color: #270703;
-        //         padding: 1rem 2.5rem 1rem 2.5rem;
-        //     }
-                
-        // }
+
         #dayOfWeekSelector {
             margin: 8rem auto 2rem auto;
             
@@ -133,12 +119,13 @@ body {
                     margin: -7.5px auto 0 .4rem;
                     height: 2.5rem;
                     width: 2.5rem;
-                    background-color: #cee1eb9d;
+                    background-color: #5d517ec5;
                     color: white;
-                    font-weight: bold;                    
+                    font-weight: bold;
+                    cursor:pointer;                    
                 } 
                 input:checked + span {
-                    background: goldenrod;                    
+                    background: rgba(226, 161, 22, 0.829);                    
                 }            
             }
         }
@@ -146,7 +133,7 @@ body {
     
     #tagline {
         color: white;
-        margin: 2rem auto 1.5rem auto;
+        margin: 2rem 1.4rem 1.4rem 1.4rem;
         transition: all 2s ease-out;
         font-family: 'Comfortaa', cursive;
         font-weight: bolder;
@@ -157,6 +144,28 @@ body {
             text-transform: capitalize;
         }
     }
+    .seeAllDealsWrapper {
+        background: #DA4453;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #802189, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #802189, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        z-index: 5;
+        text-align: center;
+        max-width: 100%;
+        margin: 1rem 1.4rem;
+        border-radius: .6rem;
+        .seeAllDeals {
+            color: white;
+
+            transition: all 2s ease-out;
+            font-family: 'Comfortaa', cursive;
+            position: relative;
+            z-index: 5;
+
+            padding:.7rem;
+        }        
+    }
+
 
     #card-wrapper {
         padding-bottom: 2rem;
@@ -168,9 +177,6 @@ body {
             margin: 3rem 1.4rem !important;
             h5 {
                 font-weight: bold;
-            }
-            a {
-                color:  white;
             }
             background-color: white;
             border-radius: 1rem;
@@ -188,24 +194,48 @@ body {
                     padding-top: 1rem;
                     font-size: 1.6rem;
                     font-weight: 700;
+                    color: #68567a;
                 }
-                .location {
-                    color:white;
-                    font-weight: 200;
-                    font-family: 'Comfortaa', cursive;
-                    padding: .4rem 0 .4rem 0;
-                    max-width: 70%;
-                    font-size: .9rem;
-                    background-color: rgb(185, 185, 185);
-                    text-align: center;
-                    border-radius: 5px;
-                    margin-bottom: 1.5rem;
-                    vertical-align: middle;
+                .locationWrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    width: 120%;
+                    gap:.4rem;
+                    div {
+                        cursor: pointer;
+                        .location {
+                            color:white;
+                            font-weight: 200;
+                            font-family: 'Comfortaa', cursive;
+                            padding: .4rem 0 .4rem .6rem;
+                            font-size: .9rem;
+                            background-color: rgb(185, 185, 185);
+                            text-align: left;
+                            border-radius: 5px;
+                            margin-bottom: 1.5rem;
+                            vertical-align: middle;
+                            display: grid;
+                            grid-template-columns: 1fr 4fr;
+                            align-items: center;
+
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                line-height: normal;
+                            }
+                            i {
+
+                            }
+                        }                        
+                    }
+                    
                 }
+
             }
             .more {
                 position: relative;
                 margin-left: 34%;
+                cursor: pointer;
                 i {
                     color: gray;
                     display: inline;
@@ -216,37 +246,55 @@ body {
                     padding-left: .7rem;
                 }
             }
-            .address {
-                color: gray;
-                font-family: 'Comfortaa', cursive;
-                font-size: 1.25rem;
-                margin-top: 1.75rem;
+            @keyframes bounce-in {
+                0%{ opacity: 0; transform: scale(.8); }
+                // 50%{ opacity: 1; transform: scale(1.0); }
+                // 85%{ transform: scale(0.9); }
+                100%{ transform: scale(1); }
             }
+            .expandInfo {
+                display:grid;
+                grid-template-columns: 1fr;
+                width: 100%;
+                
+                justify-items: start;
+                .address {
+                    color: rgb(75, 75, 75);
+                    animation: bounce-in .7s ease 0s 1 normal;
+                }
+                .details {
+                    color:rgb(78, 78, 78);
+                    font-family: 'Comfortaa', cursive;
+                    animation: bounce-in .7s ease 0s 1 normal;
+                }                
+            }
+
             .googleMap {
                 position: relative;
                 // background-color: rgb(199, 199, 199);
                 width: 100%;
                 height: 11rem;
-                margin: 1rem auto 2rem auto;
+                margin: 0 auto 2rem auto;
                 border-radius: .7rem !important;
+                animation: bounce-in .7s ease 0s 1 normal;
             }
 
             .directions {
                 display: inline-block;
                 font-size: 3rem;
-                margin: auto 0 auto 1rem;
-                padding: auto 0 auto 0;
+                margin: 1rem 0 2rem 1rem;
+                cursor: pointer;
                 width: 10%;
                 i {
                     margin: 50% 0 50% 0;
                     float: right;
-                    color: #74a6e1;
+                    color: #766ec0;
                     font-size: 2.6rem;
                 }
             }
             .companyName {
                 font-family: 'Comfortaa', cursive;
-                
+                margin: 1rem auto;
                 font-size: 1.25rem;
             }
         }
@@ -335,7 +383,6 @@ $desktop-breakpoint: 900px;
                 border: none;
                 border-radius: 1rem;
                 margin: 2rem auto 8rem 4rem;
-                
                 background-color: #ffffff;
                 width: 35%;
                 z-index: 10;
@@ -347,11 +394,12 @@ $desktop-breakpoint: 900px;
                     background-color: inherit !important;
                     color: rgb(75, 75, 75);
                     font-size: 1.6rem;
-                
+                    z-index: 100 !important;
                     position: relative;
                     width: 100%;
                     background-color: #ffffff  !important;
                     padding-bottom: .5rem; 
+                    opacity:.3
                 }
                 ul {
                     border-top:2px solid rgb(231, 231, 231);
@@ -380,7 +428,7 @@ $desktop-breakpoint: 900px;
                         height: 3rem;
                         width: 3rem;
                         line-height: 3.6;
-                        
+                        cursor: pointer;
                     }
                 }
                 a {
@@ -395,26 +443,24 @@ $desktop-breakpoint: 900px;
         }
 
         #card-wrapper {
-            
-            text-align: center;
-            
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             width: 100%;
-            grid-gap: 4rem 0;
-            
+            gap:4rem;
+            padding: 0 8rem !important;
+            justify-items: end;
+            .card:nth-child(even) {
+                margin-right:40% !important;
+            }
             .card {
                 position: relative;
                 z-index: 5;
-                width: 80%;
-                margin: 0 auto !important;
+                width: 60%;
+                margin: 0 1rem !important;
+
                 h5 {
                     font-weight: bold;
                 }
-                a {
-                    color:  white;
-                }
-
                 .info {
                     display: inline-block;
                     width: 80%;
@@ -423,20 +469,40 @@ $desktop-breakpoint: 900px;
                     padding-top: 1rem;
                     font-size: 1.6rem;
                     font-weight: 700;
-                    }
-                    .location {
-                        color:white;
-                        font-weight: 200;
-                        font-family: 'Comfortaa', cursive;
-                        padding: .4rem 0 .4rem 0;
-                        max-width: 40%;
-                        font-size: .9rem;
-                        background-color: rgb(185, 185, 185);
-                        text-align: center;
-                        border-radius: 5px;
-                        margin-bottom: 1.5rem;
-                        vertical-align: middle;
-                    }
+                }
+                .locationWrapper {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    width: 90%;
+                    gap:1rem;
+                    div {
+                        .location {
+                            color:white;
+                            font-weight: 200;
+                            font-family: 'Comfortaa', cursive;
+                            padding: .4rem 0 .4rem .6rem;
+                            font-size: 1.1rem;
+                            background-color: rgb(185, 185, 185);
+                            text-align: left;
+                            border-radius: 5px;
+                            margin-bottom: 1.5rem;
+                            vertical-align: middle;
+                            display: grid;
+                            grid-template-columns: 1fr 4fr;
+                            align-items: center;
+                            max-width: 10rem;
+                            span {
+                                display: inline-block;
+                                vertical-align: middle;
+                                line-height: normal;
+                            }
+                            i {
+
+                            }
+                        }                        
+                    } 
+                }
+
                 }
                 
                 .directions {
@@ -455,9 +521,33 @@ $desktop-breakpoint: 900px;
                 .companyName {
                     font-family: 'Comfortaa', cursive;
                     
-                    font-size: 1.25rem;
+                    font-size: 1.5rem;
                 }
             }
+        }
+        .seeAllDealsWrapper {
+            background: #DA4453;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #802189, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #802189, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            
+            z-index: 5;
+            text-align: center;
+            max-width: 48%;
+            margin: 3rem auto;
+            border-radius: .6rem;
+            .seeAllDeals {
+                color: white;
+                font-size: 1.4rem;
+                transition: all 2s ease-out;
+                font-family: 'Comfortaa', cursive;
+                position: relative;
+                z-index: 5;
+                animation: bounce-in .7s ease 0s 1 normal;
+                padding:.7rem;
+            }        
+        }
+        footer {
+            margin-top: 4rem;
         }
     }
 }

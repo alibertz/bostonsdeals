@@ -3,38 +3,6 @@ import React from 'react';
 export default class AutoCompleteText extends React.Component {
     constructor (props) {
         super(props);
-        this.items = [
-                        'North End', 
-                        'Cambridge', 
-                        'South End', 
-                        'Back Bay',
-                        "Copley Square",
-                        "Harvard Square",
-                        "Financial District",
-                        "Fenway/Kenmore",
-                        "Somerville",
-                        "Brighton",
-                        "Davis Square",
-                        "Allston",
-                        "Beacon Hill",
-                        "Chinatown",
-                        "Bay Village",
-                        "Downtown",
-                        "West End",
-                        "Roxbury",
-                        "Dorchester",
-                        "Roslindale",
-                        "Mattapan",
-                        "Hyde Park",
-                        "West Roxbury",
-                        "Jamaica Plain",
-                        "Mission Hill",
-                        "South Boston",
-                        "Charlestown",
-                        "East Boston",
-                        "Mid Dorchester",
-
-                    ];
         this.state = {
             suggestions: [''],
             text: ""
@@ -46,7 +14,7 @@ export default class AutoCompleteText extends React.Component {
         let suggestions = [];
         if (value.length > 0) {
             const regex = new RegExp(`^${value}`, 'i');
-            suggestions = this.items.sort().filter(v => regex.test(v))
+            suggestions = this.props.items.sort().filter(v => regex.test(v))
         }
         this.props.onTextChanged(suggestions, value);
         this.setState(() => ({ suggestions, text: value }));
@@ -82,15 +50,14 @@ export default class AutoCompleteText extends React.Component {
         const value = this.props.value;
         return (
             <div id="locationSelector" >
-                <input  type="text" 
-                        name="location"
-                        onKeyPress={this.props.handleChange} 
-                        // eslint-disable-next-line
-                        type="text"
-                        onChange={this.onTextChanged}
-                        value={value || ''}
-                        placeholder="Enter neighborhood..."
-                        />
+                <input  
+                    type="text" 
+                    name="location"
+                    onKeyPress={this.props.handleChange}
+                    onChange={this.onTextChanged}
+                    value={value || ''}
+                    placeholder="Enter neighborhood..."
+                />
 
                 {this.renderSuggestions()}
             </div>

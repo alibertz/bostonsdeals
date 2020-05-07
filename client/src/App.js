@@ -10,20 +10,59 @@ const currentDay = weekdays[d.getDay()]
 
 class App extends Component {
 
-  state = {
-    location: "",
-    dayOfWeek: currentDay,
-    posts: [],
-    suggestions: [],
-    value: "",
-  };
+  constructor (props) {
+    super(props);
+    this.items = [
+      '',
+      'North End', 
+      'Cambridge', 
+      'South End', 
+      'Back Bay',
+      "Copley Square",
+      "Harvard Square",
+      "Financial District",
+      "Fenway",
+      "Kenmore",
+      "Faneuil Hall",
+      "Somerville",
+      "Brighton",
+      "Davis Square",
+      "Allston",
+      "Beacon Hill",
+      "Chinatown",
+      "Bay Village",
+      "Downtown Crossing",
+      "West End",
+      "Roxbury",
+      "Dorchester",
+      "Roslindale",
+      "Mattapan",
+      "Hyde Park",
+      "West Roxbury",
+      "Jamaica Plain",
+      "Mission Hill",
+      "South Boston",
+      "Charlestown",
+      "East Boston",
+      "Mid Dorchester",
+      "Boston"
+    ]
+    this.state = {
+      location: "",
+      dayOfWeek: currentDay,
+      posts: [],
+      suggestions: [],
+      value: "",
+    }
+  }
+
 
   posts = []
 
   handleChange = (e) => {
-    if(e.key === 'Enter') {
+    if(e.key === 'Enter' && this.state.suggestions[0]) {
 
-      let value = this.state.suggestions[0];
+      let value = this.state.suggestions[0].replace(' ', '_');
 
       if(value === undefined) {
         value = e.target.value;
@@ -52,17 +91,21 @@ class App extends Component {
 
   handleSelect = (location) => {
     this.setState({location});
-  }
+  };
 
   onTextChanged (suggestions, value, location) {
     this.setState({suggestions, value});
-  }
+  };
+
+  seeAllDeals () {
+    this.setState({location: '', value: ''});
+  };
 
   render() {
     return (
       <div>
         <main className="bg-img">
-          <h1 className="header" id="header">Boston's Deals</h1>
+          <h1 onClick={this.seeAllDeals.bind(this)} className="header" id="header">Boston's Deals</h1>
           <FilterDeals 
               handleDayChange={this.handleDayChange.bind(this)} 
               handleChange={this.handleChange.bind(this)} 
@@ -73,14 +116,16 @@ class App extends Component {
               suggestions={this.state.suggestions}
               onTextChanged={this.onTextChanged.bind(this)}
               value={this.state.value}
-              // eslint-disable-next-line
-              posts={this.state.posts}
+              items={this.items}
               />
 
           <PostViewer 
             dayOfWeek={this.state.dayOfWeek}
             location={this.state.location}
             posts={this.state.posts}
+            items={this.items}
+            seeAllDeals={this.seeAllDeals.bind(this)}
+            handleSelect={this.handleSelect.bind(this)}
             />
         </main>
         <Footer />

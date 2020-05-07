@@ -1,0 +1,181 @@
+[{
+    "id": "1",
+    "companyName": "Flann O'Brien's",
+    "address": "1619 Tremont St",
+    "location": [
+        "SouthEnd",
+        "Boston"
+    ],
+    "description": "Free wings with purchase of beverage",
+    "dayOfWeek": "Daily",
+    "lat": 42.333854,
+    "lng": -71.103343,
+    "placeid": "ChIJSSXrKo9544kRKijcZSfqYNQ",
+    "details": "After 9PM"
+},
+{
+    "id": "2",
+    "companyName": "The Avenue",
+    "address": "1249 Commonwealth Ave",
+    "city": "Allston",
+    "location": [
+        "Allston",
+        "Brighton",
+        "Boston"
+    ],
+    "description": "$2 burgers",
+    "dayOfWeek": "Monday",
+    "lat": 42.350156,
+    "lng": -71.132124,
+    "placeid": "ChIJgw3WEcZ544kRl1OnDzjRFns",
+    "details": "After 10PM"
+},
+{
+    "id": 3,
+    "companyName": "The Red Hat",
+    "address": "9 Bowdoin St",
+    "city": "Boston",
+    "location": [
+        "WestEnd",
+        "Boston"
+    ],
+    "description": "$.10 cent wings",
+    "dayOfWeek": "Weekdays",
+    "lat": 42.360923,
+    "lng": -71.063049,
+    "placeid": "ChIJz4Ml6Jpw44kR5HvcyEKSeUM",
+    "details": ""
+},
+{
+    "id": 4,
+    "companyName": "McGreevy's",
+    "address": "911 Boylston St",
+    "city": "Boston",
+    "location": [
+        "Copley",
+        "BackBay",
+        "Boston"
+    ],
+    "description": "$1 cheeseburgers 4-11pm",
+    "dayOfWeek": "Tuesday",
+    "lat": 42.348456,
+    "lng": -71.084423,
+    "placeid": "ChIJm9Kc7A9644kRFN5LXQoikuk",
+    "details": ""
+},
+{
+    "id": 5,
+    "companyName": "The Draft",
+    "address": "34 Harvard Ave",
+    "city": "Allston",
+    "location": [
+        "Allston",
+        "Boston",
+        "Brighton"
+    ],
+    "description": "$.35 cent wings",
+    "dayOfWeek": "Sunday, Monday",
+    "lat": 42.354846,
+    "lng": -71.13246,
+    "placeid": "ChIJJ7d7WsV544kRsc_8niKgO2o",
+    "details": ""
+},
+{
+    "id": 6,
+    "companyName": "Barracuda Tavern",
+    "address": "15 Bosworth St",
+    "city": "",
+    "location": [
+        "DowntownCrossing",
+        "Boston",
+        "Downtown"
+    ],
+    "description": "$2 sliders",
+    "dayOfWeek": "Monday",
+    "lat": 42.357128,
+    "lng": -71.060725,
+    "placeid": "ChIJrZgpWoNw44kRcUu4aS4jzdg",
+    "details": ""
+},
+{
+    "id": 7,
+    "companyName": "Clarke's",
+    "address": "21 Merchant Row",
+    "city": "Boston",
+    "location": [
+        "Faneuil",
+        "Boston",
+        "Downtown",
+        "Financial"
+    ],
+    "description": "$5 pizza & taco specials",
+    "dayOfWeek": "Daily",
+    "lat": 42.359471,
+    "lng": -71.0555,
+    "placeid": "ChIJjTbKeYZw44kRHxgOJhTfGPk",
+    "details": "After 5PM"
+},
+{
+    "id": 8,
+    "companyName": "The Glenville Stops",
+    "address": "87 Glenville Ave",
+    "city": "",
+    "location": [
+        "Allston",
+        "Boston"
+    ],
+    "description": "$1 oysters",
+    "dayOfWeek": "Daily",
+    "lat": 42.349499,
+    "lng": -71.135011,
+    "placeid": "ChIJ8whH7sh544kRM7Zj0fX_O3Y",
+    "details": "5PM-7PM"
+},
+{
+    "id": 9,
+    "companyName": "Lolita Back Bay",
+    "address": "271 Dartmouth Street",
+    "city": "",
+    "location": [
+        "Back Bay",
+        "Boston"
+    ],
+    "description": "$9 all you can eat tacos",
+    "dayOfWeek": "Monday",
+    "lat": 42.350664,
+    "lng": -71.077443,
+    "placeid": "ChIJ0VQFcQx644kR9HL-L98mUFY",
+    "details": "After 5PM with drink purchase"
+},
+{
+    "id": 10,
+    "companyName": "The Asgard",
+    "address": "350 Massachusetts Ave",
+    "city": "",
+    "location": [
+        "Central",
+        "Cambridge",
+        "MIT"
+    ],
+    "description": "$.25 cent wings",
+    "dayOfWeek": "Monday",
+    "lat": 42.362719,
+    "lng": -71.099634,
+    "placeid": "ChIJ9d1H8FR344kREiU1ulU7Juk",
+    "details": "After 5PM"
+},
+{
+    "id": 11,
+    "companyName": "Restaurant Dante",
+    "address": "40 Edwin H. Land Blvd",
+    "city": "",
+    "location": [
+        "Cambridge"
+    ],
+    "description": "$1 oysters",
+    "dayOfWeek": "Daily",
+    "lat": 42.366707,
+    "lng": -71.075232,
+    "placeid": "ChIJtQQAdb1w44kRnfbyG4CW6Z0",
+    "details": "2:30-6PM"
+}]

@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 // DEVELOPMENT: http://localhost:4000/graphql
 
 const client = new ApolloClient({
-    uri: "/graphql"
+    uri: "http://localhost:4000/graphql"
 });
 
 ReactDOM.render(
