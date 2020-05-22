@@ -6,7 +6,6 @@ body {
     min-height: 100%;
     width: 100%;
     position: relative;
-    padding-bottom: 150px !important;
     overflow-x: hidden;
     main {
         min-height: 100vh;
@@ -21,7 +20,7 @@ body {
         background-color:#1e1a19 !important;
         background: url("https://newevolutiondesigns.com/images/freebies/city-iphone-wallpaper-19.jpg") no-repeat center center fixed;
         background-size: cover;
-        
+        z-index: 0;
         background-position: right;
         // background: url("./images/boston-skyline.jpg");
     }
@@ -37,17 +36,188 @@ body {
 
     }
     .header {
-        font-family: 'Yellowtail', cursive;
-        color: white;
-        font-size: 2.3rem;
-        padding-top: 12%;
-        margin-left: -8rem;
-        text-align: center;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        .brand {
+            font-family: 'Yellowtail', cursive;
+            color: white;
+            font-size: 2.3rem;
+            padding-top: 12%;
+            margin-left: -3rem;
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            cursor: pointer;
+        }
+        .nav {
+            margin-top: 2rem;
+            margin-left: 1rem;
+
+            .overlay {
+                height: 100vh;
+                width: 0;
+                position: fixed;
+                z-index: 10;
+                top: 0;
+                left: -2rem;
+                background-color: #23286dfa;
+                transition: 0.4s;
+                z-index: 100;
+                overflow-y:hidden;
+                padding:.5rem;
+                .close {
+                    font-size: 2rem;
+                    color: white;
+                    margin: 1.5rem;
+                    z-index: 10;
+                    cursor: pointer;
+                }
+                .overlay-content {
+                    position: relative;
+                    top: 5%;
+                    width: 100%;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1rem;
+                    padding: 1rem;
+                    div {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        padding: 1rem;
+                        color: white;
+                        background-color: #a4355cb9;
+                        text-align: center;
+                        border-radius: .5rem;
+                        font-family: 'Comfortaa', cursive;
+                        cursor: pointer;
+                        i {
+                            font-size: 2rem;
+                            margin-bottom: .7rem;
+                        }
+                    }
+                }
+                hr {
+                    border-color: white;
+                    position: relative;
+
+                    border: 1px #6468ac solid;
+                    margin: 3rem 1rem;
+                }
+                .about-content {
+                    .about {
+                        font-size: 1.25rem;
+                        position: relative;
+                        cursor: pointer;
+                    }
+                    .blog {
+                        font-size: 1.25rem;
+                        position: relative;
+                        cursor: pointer;
+                    }
+                    .contact {
+                        font-size: 1.25rem;
+                        position: relative;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .hamburgIcon {
+                z-index: 10;
+                font-size: 2rem; 
+                cursor: pointer;
+                color: white;
+                position: relative;
+                justify-self: center;
+            }
+            h4 {
+                bottom: 0;
+                position: absolute;
+                color: white;
+                font-family: 'Comfortaa', cursive;
+                letter-spacing: .2rem;
+                margin: 1rem;
+            }        
+        }            
+    }
+    
+    .scrollToTopBtn {
+        .scrollToTop {
+            position: fixed;
+            bottom: 2rem;
+            color: rgb(235, 235, 235);
+            right: 2rem;
+            font-size: 2rem;
+            opacity: .5;
+            padding: .1rem 1rem;
+            background-color: rgb(194, 181, 181);
+            border-radius: .4rem;
+            z-index: 10;
+        }
+    }
+
+    .info-panel {
+        margin: 13rem 2rem 5rem 2rem;
         z-index: 10;
         position: relative;
-        cursor: pointer;
-    }    
-    
+        text-align: center;
+        h3 {
+            color: white;
+            margin: auto 0 3rem auto;
+            font-size: 2.4rem;
+            text-align: left;
+        }
+        p {
+            color: white;
+            line-height: 1.7rem;
+            text-align: justify;
+        }
+        #more-arrows {
+            @keyframes bounce {
+                from { transform: translate3d(0, 0, 0);} 
+                to { transform: translate3d(0, 8px, 0);} 
+            }
+            cursor: pointer;
+            margin: 2rem auto;
+            width: 75px;
+            height: 65px;
+            position: relative;
+            z-index: 10;
+            animation: bounce 0.8s infinite alternate;
+            &:hover {
+            
+                polygon {
+                    fill: #FFF;
+                    transition: all .2s ease-out;
+            
+                    &.arrow-bottom {
+                        transform: translateY(-18px);
+                    }
+            
+                    &.arrow-top {
+                        transform: translateY(18px);
+                    }
+                
+                }
+          
+            }
+          
+        }
+        
+        polygon {
+          fill: #FFF;
+          transition: all .2s ease-out;
+            
+          &.arrow-middle {
+              opacity: 0.75;
+            }
+        
+            &.arrow-top {
+              opacity: 0.5
+            }
+             
+        }
+    }
+
     #filterDeals {
         display:inline-block;
         width: 100%;
@@ -300,22 +470,58 @@ body {
     }
     footer {
         background-color: #24296e;
-        height: 150px;
         bottom: 0;
-        position: absolute;
+        height: 100%;
         width: 100%;
-        padding-left: 2rem;
-        margin-top: 4rem;
+        z-index: 1;
         h5 {
             letter-spacing: .2rem;
             color: white;
             font-family: 'Comfortaa', cursive;
             font-weight: 100;
             padding-top: 2rem;
-            position: absolute;
-    
+            margin-bottom: 2rem;
+            padding-left: 2rem;
         }
-        
+        .footer {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: .2rem;
+            width: 100%;
+            padding-bottom: 3rem;
+            padding-left: 2rem;
+            div {
+                display: grid;
+                grid-template-rows: 1fr;
+                position: relative;
+                display: inline-block;
+                
+                i {
+                    color: white;
+                    font-size: 1.4rem;
+                    display: inline-block;
+                    margin-left: 1rem;
+                    cursor: pointer;
+                }
+                h3 {
+                    color: white;
+                    font-size: 1.2rem;
+                    position: relative;
+                    display: inline-block;
+                    margin-left: 1.2rem;
+                    cursor: pointer;
+                    font-weight: 100;
+                }
+            }
+        }
+        p {
+            color: white;
+            text-align: center;
+            margin-bottom: 0;
+            padding-bottom: 1rem;
+            font-weight: 100;
+            font-size: 1rem;
+        }
     }
     
 }
@@ -351,15 +557,18 @@ $desktop-breakpoint: 900px;
     
         }
         .header {
-            font-family: 'Yellowtail', cursive;
-            color: white;
-            font-size: 3.5rem;
-            padding-top: 4%;
-            margin-left: 4rem;
-            text-align: left;
-            z-index: 10;
-            position: relative;
+            .brand {
+                font-family: 'Yellowtail', cursive;
+                color: white;
+                font-size: 3.5rem;
+                padding-top: 4%;
+                margin-left: 4rem;
+                text-align: left;
+                z-index: 10;
+                position: relative;
+            }
         }
+        
         #tagline {
             color: white;
             margin: 6rem auto 1.5rem auto;
